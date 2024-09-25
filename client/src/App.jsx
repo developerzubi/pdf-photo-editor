@@ -12,6 +12,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
+import Navbar from "./components/Navbar";
 
 // protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
@@ -49,11 +50,12 @@ function App() {
 	if (isCheckingAuth) return <LoadingSpinner />;
 
 	return (
+		<>
 		<div
 		className='min-h-screen bg-gradient-to-br from-blue-900 via-cyan-700 to-teal-500 flex items-center justify-center relative overflow-hidden'
 
 		>
-
+		<Navbar />
 			<Routes>
 				<Route
 					path='/'
@@ -102,6 +104,7 @@ function App() {
 			</Routes>
 			<Toaster />
 		</div>
+		</>
 	);
 }
 
