@@ -13,6 +13,9 @@ import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
+import ImagePage from "./pages/ImagePage";
+import Convertpdf from "./pages/convertpdf";
+import Removebg from "./pages/Removebg";
 
 // protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
@@ -62,6 +65,30 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<DashboardPage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/editimg'
+					element={
+						<ProtectedRoute>
+							<ImagePage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/convertpdf'
+					element={
+						<ProtectedRoute>
+							<Convertpdf />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path='/removebg'
+					element={
+						<ProtectedRoute>
+							<Removebg/>
 						</ProtectedRoute>
 					}
 				/>
